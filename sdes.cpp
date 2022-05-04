@@ -8,7 +8,7 @@ Implementation of Simplified DES algoritm
 
 using namespace std;
 
-static string key1="", key2="";		//since it has to be accessed by all the functions
+static string key1="", key2="";		
 
 void IP(string &p)
 {
@@ -108,7 +108,7 @@ string matrix(string ex)
 	
 }
 
-void p4(string &p)	//1011
+void p4(string &p)	
 {
 	int temp[] = {2,4,3,1};
 	string ans;
@@ -174,7 +174,6 @@ void p8(string &p, string &key)
 void shiftleft(string &p, int shift)
 {
 	
-	//char* arr = new char[10];		//put the transformed p into arr
 	string arr = "";
 	int x = shift;
 	
@@ -234,7 +233,7 @@ int main()
 	int shift = 1;
 	while(round > 0)
 	{
-		shiftleft(p10, shift);		//send p10 array to leftshift
+		shiftleft(p10, shift);		//send p10 to leftshift
 		if(shift==1)
 		{
 			p8(p10, key1);		
@@ -243,7 +242,7 @@ int main()
 		}
 		else
 		{
-			p8(p10, key2);		//GENERATED THE KEY
+			p8(p10, key2);		//generate the key
 			plaintext = encrypt(plaintext, key2, shift);
 		}
 		
